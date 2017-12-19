@@ -1,0 +1,61 @@
+﻿<Window x:Class="Sent2me_win_client.member"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sent2me_win_client"
+        mc:Ignorable="d"
+        Title="member" Height="401.811" Width="499.366" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:sent2meDataSet x:Key="sent2meDataSet"/>
+        <CollectionViewSource x:Key="titleViewSource" Source="{Binding Title, Source={StaticResource sent2meDataSet}}"/>
+        <CollectionViewSource x:Key="branchViewSource" Source="{Binding Branch, Source={StaticResource sent2meDataSet}}"/>
+    </Window.Resources>
+    <Grid>
+        <Button x:Name="emp_add_btn" Content="เพิ่มพนักงาน" HorizontalAlignment="Left" Margin="150,319,0,0" VerticalAlignment="Top" Width="75" Click="emp_add_btn_Click" Height="32"/>
+        <Button x:Name="cancel_btn" Content="ยกเลิก" HorizontalAlignment="Left" Margin="282,319,0,0" VerticalAlignment="Top" Width="75" Height="32" Click="cancel_btn_Click"/>
+        <Label Content="ชื่อพนักงาน" HorizontalAlignment="Left" Margin="70,108,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="emp_name_txt" HorizontalAlignment="Left" Height="23" Margin="150,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="ที่อยู่พนักงาน" HorizontalAlignment="Left" Margin="70,139,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="emp_add_txt" HorizontalAlignment="Left" Height="23" Margin="150,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Grid x:Name="grid1" DataContext="{StaticResource titleViewSource}" HorizontalAlignment="Left" Margin="70,165,0,0" VerticalAlignment="Top" Width="239">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="ตำแหน่ง" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <ComboBox x:Name="title_nameComboBox" Grid.Column="1" DisplayMemberPath="title_name" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="25.4,5,-46.6,5" Grid.Row="0" VerticalAlignment="Center" Width="150" SelectedValuePath="{Binding title_id}">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+        </Grid>
+        <Grid x:Name="grid2" DataContext="{StaticResource branchViewSource}" HorizontalAlignment="Left" Margin="70,197,0,0" VerticalAlignment="Top" Width="243">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="สาขา" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <ComboBox x:Name="branch_nameComboBox" Grid.Column="1" DisplayMemberPath="branch_name" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="35.6,3,-61,6" Grid.Row="0" VerticalAlignment="Center" Width="155" SelectedValuePath="{Binding branch_id}">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+        </Grid>
+        <TextBox Name="usernane_txt" HorizontalAlignment="Left" Height="23" Margin="166,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="password_txt" HorizontalAlignment="Left" Height="23" Margin="166,262,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="82,234,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="82,262,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

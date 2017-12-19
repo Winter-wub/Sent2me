@@ -1,0 +1,57 @@
+﻿<Window x:Class="Sent2me_win_client.package_price_editor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sent2me_win_client"
+        mc:Ignorable="d"
+        Title="การเปลี่ยนอัตราค่าบริการ" Height="515.09" Width="785.192" Loaded="Window_Loaded" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Window.Resources>
+        <local:sent2meDataSet x:Key="sent2meDataSet"/>
+        <CollectionViewSource x:Key="package_typeViewSource" Source="{Binding Package_type, Source={StaticResource sent2meDataSet}}"/>
+    </Window.Resources>
+    <Grid>
+        <DataGrid Name="package_price_datagrid" HorizontalAlignment="Left" Height="466" Margin="10,10,0,0" VerticalAlignment="Top" Width="283"/>
+        <TextBox Name="Weight_rate_txt" HorizontalAlignment="Left" Height="23" Margin="544,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <Grid x:Name="grid1" DataContext="{StaticResource package_typeViewSource}" HorizontalAlignment="Left" Margin="432,168,0,0" VerticalAlignment="Top" Width="294">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="88.8"/>
+                <ColumnDefinition Width="Auto" MinWidth="165.6"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="ชนิดพัสดุ" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="0" VerticalAlignment="Center" Height="26" Width="53"/>
+            <ComboBox x:Name="package_type_nameComboBox" Grid.Column="1" DisplayMemberPath="package_type_name" HorizontalAlignment="Left" Height="23" ItemsSource="{Binding}" Margin="24.4,3,0,6" Grid.Row="0" VerticalAlignment="Center" Width="132" SelectedValuePath="{Binding package_type_id}">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+                
+            </ComboBox>
+        </Grid>
+        <Label Content="น้ำหนักไม่เกิน" HorizontalAlignment="Left" Margin="432,202,0,0" VerticalAlignment="Top"/>
+        <Label Content="กรัม" HorizontalAlignment="Left" Margin="687,202,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="cost_txt" HorizontalAlignment="Left" Height="23" Margin="544,233,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <Label Content="ราคา" HorizontalAlignment="Left" Margin="432,230,0,0" VerticalAlignment="Top"/>
+        <Button Name="add_package_price" Content="เพิ่ม" HorizontalAlignment="Left" Margin="525,287,0,0" VerticalAlignment="Top" Width="105" Height="49" Click="add_package_price_Click" Background="#FF54C736">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Name="delete_package_price" Content="ลบ" HorizontalAlignment="Left" Margin="307,10,0,0" VerticalAlignment="Top" Width="105" Height="37" Click="delete_package_price_Click" Background="#FFFF4545">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content="บาท" HorizontalAlignment="Left" Margin="687,230,0,0" VerticalAlignment="Top"/>
+        <Button Name="close_btn" Content="ปิด" HorizontalAlignment="Left" Margin="687,479,0,0" VerticalAlignment="Top" Width="75" Background="#FFE51515" Click="close_btn_Click"/>
+        <Label Name="Show_branch" Content="Label" HorizontalAlignment="Left" Margin="431,43,0,0" VerticalAlignment="Top" Width="331"/>
+
+    </Grid>
+</Window>

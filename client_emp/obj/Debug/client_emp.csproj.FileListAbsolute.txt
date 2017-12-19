@@ -1,0 +1,13 @@
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\bin\Debug\client_emp.exe.config
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\bin\Debug\client_emp.exe
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\bin\Debug\client_emp.pdb
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.login.resources
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.Properties.Resources.resources
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.csproj.GenerateResource.Cache
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.csproj.CoreCompileInputs.cache
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.exe
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.pdb
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.csprojResolveAssemblyReference.cache
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.Main_frm.resources
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.Package_frm.resources
+C:\Users\WaveBlur\source\repos\Sent2me\client_emp\obj\Debug\client_emp.package_reg_frm.resources

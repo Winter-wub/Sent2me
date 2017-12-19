@@ -1,0 +1,2 @@
+C:\Users\WaveBlur\source\repos\Sent2me\Sent2me\obj\Debug\Sent2me.njsproj.CoreCompileInputs.cache
+C:\Users\WaveBlur\source\repos\Sent2me\Sent2me\bin\Microsoft.NodejsTools.WebRole.dll

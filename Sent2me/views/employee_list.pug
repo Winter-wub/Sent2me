@@ -1,0 +1,39 @@
+﻿extends ./layouts/base
+
+block title
+    title รายชื่อพนักงานทั้งหมด
+block header
+    script(type='text/javascript').
+      function open_link(){
+         window.open('/employee/json/emp-all');
+      }
+
+    h1 รายชื่อของพนักงาน
+    
+block content
+    table
+      thead
+          tr
+            th ID
+            th ชื่อพนักงาน
+            th ตำแหน่ง
+            th
+      tbody
+          for i in Employee
+            tr
+              td= i.emp_id
+              td= i.emp_name
+              td= i.title_id
+              td
+      tfooter
+          tr 
+            td 
+            td 
+            td 
+            td พนักงานทั้งหมด : #{Employee.length} คน 
+    button(type='button',onclick='open_link()') แสดง Json
+    h2 การค้นหา
+    form(action="/employee/search",method="post",target="__blank")
+        label ตำแหน่ง
+           input(type="text",name="id")
+           input(type="submit")

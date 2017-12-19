@@ -1,0 +1,27 @@
+﻿extends ./layouts/base
+
+block header
+    h1 ผลลัพธ์การค้นหา
+block title
+    title ผลลัพธ์การค้นหา
+block content
+    table
+      thead
+        tr
+          th ID
+          th ชื่อพนักงาน
+          th ตำแหน่ง
+          th
+      tbody
+        for i in Employee
+           tr
+            td= i.emp_id
+            td= i.emp_name
+            td= i.title_id
+            td
+      tfooter
+        tr 
+         td 
+         td 
+         td 
+         td ผลการค้นหาทั้งหมดได้ : #{Employee.length} คน 
