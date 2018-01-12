@@ -11,9 +11,7 @@ router.use(bodyParser.urlencoded({
     extended: true
 }));
 
-/*router.use(function (req, res) {
-    res.status(404).send({ url: req.originalUrl + ' not found' })
-});*/
+
 
 /*SQL CONNECTION CONFIGULATION*/
 
